@@ -1,0 +1,33 @@
+{
+  "_comment": "Pack-wide default — used by every chapter that doesn't have its own <chapterId>.json.",
+  "chapterId": "_default_",
+  "characters": {
+    "victor":   { "name": "Victor Frankenstein", "portrait": "characters/victor.jpg" },
+    "creature": { "name": "The Creature",        "portrait": "characters/creature.jpg" },
+    "walton":   { "name": "Robert Walton",       "portrait": "characters/walton.jpg" },
+    "shelley":  { "name": "Mary Shelley",        "portrait": "characters/mary-shelley.jpg" }
+  },
+  "scenes": [
+    {
+      "id": "default",
+      "background": "backgrounds/sea-of-ice.jpg",
+      "characters": [
+        { "id": "victor",   "side": "left"  },
+        { "id": "creature", "side": "right" }
+      ],
+      "startFragId": "__default__",
+      "endFragId":   "__default__"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id":            "creature-awakens",
+      "image":         "moments/moment-creature-awakens.jpg",
+      "title":         "The Creature Awakens — Theodor von Holst, 1831",
+      "anchorFragId":  "__default__",
+      "durationFrags": 4,
+      "inline":        false
+    }
+  ],
+  "speakers": []
+}

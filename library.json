@@ -18,10 +18,13 @@
         "text": "https://www.gutenberg.org/ebooks/345",
         "audio": "https://librivox.org/dracula-by-bram-stoker/"
       },
-      "chapterCount": 0,
+      "chapterCount": 33,
+      "audibleChapterCount": 0,
+      "hasAudio": false,
       "totalDuration": 0,
       "totalDurationLabel": "",
-      "available": false,
+      "cover": "books/dracula/content/4235783406772595616_cover.jpg",
+      "available": true,
       "packs": [
         {
           "slug": "dracula-public-domain",
@@ -49,7 +52,9 @@
         "space opera",
         "first contact"
       ],
-      "chapterCount": 73,
+      "chapterCount": 86,
+      "audibleChapterCount": 73,
+      "hasAudio": true,
       "totalDuration": 60838.885,
       "totalDurationLabel": "16h 53m",
       "cover": "books/echo-of-worlds/content/images/9780316504928.jpg",
@@ -58,11 +63,11 @@
         {
           "slug": "echo-of-worlds-default",
           "name": "Echo of Worlds \u2014 Default",
-          "description": "Personal pack \u2014 characters, scenes, and key moments for M.R. Carey's Pandominion world. Empty until regenerated.",
+          "description": "Personal pack \u2014 characters, scenes, and key moments for M.R. Carey's Pandominion world. 23 chapter JSONs with prompts; partial PNG coverage (some images still need regeneration).",
           "art": {
             "source": "ai-generated",
             "model": "gpt-image-2",
-            "notes": "Personal pack; original AI-generated images were lost in a tooling accident on 2026-05-12 and have not yet been regenerated."
+            "notes": "Personal pack \u2014 original AI-generated images. Partial recovery from Chrome cache after a tooling accident on 2026-05-12; missing images can be regenerated from the prompts embedded in each chapter JSON."
           },
           "license": "All-rights-reserved \u2014 personal pack, not for redistribution."
         }
@@ -86,10 +91,13 @@
         "text": "https://www.gutenberg.org/ebooks/84",
         "audio": "https://librivox.org/frankenstein-or-the-modern-prometheus-by-mary-wollstonecraft-shelley/"
       },
-      "chapterCount": 0,
+      "chapterCount": 32,
+      "audibleChapterCount": 0,
+      "hasAudio": false,
       "totalDuration": 0,
       "totalDurationLabel": "",
-      "available": false,
+      "cover": "books/frankenstein/content/1350534604896852346_cover.jpg",
+      "available": true,
       "packs": [
         {
           "slug": "frankenstein-public-domain",
@@ -122,10 +130,13 @@
         "text": "https://www.gutenberg.org/ebooks/1661",
         "audio": "https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/"
       },
-      "chapterCount": 0,
+      "chapterCount": 15,
+      "audibleChapterCount": 0,
+      "hasAudio": false,
       "totalDuration": 0,
       "totalDurationLabel": "",
-      "available": false,
+      "cover": "books/sherlock-bohemia/content/8260658763750505555_cover.jpg",
+      "available": true,
       "packs": [
         {
           "slug": "sherlock-paget",

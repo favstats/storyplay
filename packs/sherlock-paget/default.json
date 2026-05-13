@@ -1,0 +1,32 @@
+{
+  "_comment": "Pack-wide default — used by every chapter that doesn't have its own <chapterId>.json.",
+  "chapterId": "_default_",
+  "characters": {
+    "holmes": { "name": "Sherlock Holmes", "portrait": "characters/holmes.jpg" },
+    "watson": { "name": "Dr. John Watson", "portrait": "characters/watson-greek-interpreter.jpg" },
+    "adler":  { "name": "Irene Adler",     "portrait": "characters/irene-adler.jpg" }
+  },
+  "scenes": [
+    {
+      "id": "default",
+      "background": "backgrounds/fireside.jpg",
+      "characters": [
+        { "id": "holmes", "side": "left"  },
+        { "id": "watson", "side": "right" }
+      ],
+      "startFragId": "__default__",
+      "endFragId":   "__default__"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id":            "holmes-fireside",
+      "image":         "moments/moment-yawn.jpg",
+      "title":         "Holmes by the Fire — Sidney Paget, Strand Magazine, 1891",
+      "anchorFragId":  "__default__",
+      "durationFrags": 4,
+      "inline":        false
+    }
+  ],
+  "speakers": []
+}

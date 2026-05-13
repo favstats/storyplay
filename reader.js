@@ -23,6 +23,9 @@ const STATE = {
   activeMomentId: null,
   lastSpeakerId: null,
   lastSpeakerTimeout: 0,
+  // True when the current chapter has no audio fragments — reader falls
+  // back to showing the first scene + first key moment statically.
+  textOnlyMode: false,
   // book + pack identity (parsed from URL)
   bookSlug: null,
   packSlug: null,
@@ -158,17 +161,23 @@ async function loadManifest() {
 function buildToc() {
   const list = $("#toc-list");
   list.innerHTML = "";
-  let audibleNum = 0;
-  STATE.manifest.chapters.forEach((ch, i) => {
-    const hasAudio = !!(ch.segments && ch.segments.length);
-    if (!hasAudio) return;
-    audibleNum++;
+  const chapters = STATE.manifest.chapters || [];
+  const anyAudio = chapters.some(ch => ch.segments && ch.segments.length);
+  // Audio mode: only chapters with media-overlay alignment.
+  // Text-only mode (no audio in book): everything that has a usable title.
+  const include = ch => anyAudio
+    ? !!(ch.segments && ch.segments.length)
+    : !!(ch.title && ch.title.trim().length > 0);
+  let n = 0;
+  chapters.forEach((ch, i) => {
+    if (!include(ch)) return;
+    n++;
     const li = document.createElement("li");
     li.dataset.idx = i;
     const label = ch.title || ch.id;
-    li.innerHTML = `<span class="num">${String(audibleNum).padStart(2, "0")}</span><span class="label">${label}</span>`;
+    li.innerHTML = `<span class="num">${String(n).padStart(2, "0")}</span><span class="label">${label}</span>`;
     li.addEventListener("click", () => {
-      loadChapter(i, { autoplay: true });
+      loadChapter(i, { autoplay: anyAudio });
       closeToc();
     });
     list.appendChild(li);
@@ -200,7 +209,10 @@ function setToggle(name, on) {
 function applyTogglesFromStorage() {
   const t = getToggles();
   for (const name of VISUAL_TOGGLES) {
-    const on = !!t[name];
+    // Visual layers default ON so packs show their art the moment a reader
+    // opens a book. Users can flip individual toggles off in settings, and
+    // those choices persist.
+    const on = t[name] === undefined ? true : !!t[name];
     document.body.dataset[`toggle${name.charAt(0).toUpperCase()}${name.slice(1)}`] = on ? "on" : "off";
     const cb = document.querySelector(`input[data-toggle="${name}"]`);
     if (cb) cb.checked = on;
@@ -216,7 +228,12 @@ async function loadSceneData(chapterId) {
   STATE.activeMomentId = null;
   STATE.lastSpeakerId = null;
   try {
-    const r = await fetch(`${STATE.packRoot}${chapterId}.json?t=${Date.now()}`);
+    // Try the chapter-specific JSON first; fall back to pack-wide default.json
+    // so unwritten chapters still get scene + character art.
+    let r = await fetch(`${STATE.packRoot}${chapterId}.json?t=${Date.now()}`);
+    if (!r.ok) {
+      r = await fetch(`${STATE.packRoot}default.json?t=${Date.now()}`);
+    }
     if (!r.ok) { renderStage(); applySceneBackground(true); applyKeyMoment(); return; }
     const data = rewritePackPaths(await r.json());
     STATE.sceneData = data;
@@ -289,6 +306,7 @@ function startSceneDataPolling(chapterId) {
 }
 
 function sceneForFragIdx(idx) {
+  if (STATE.textOnlyMode) return STATE.sceneData?.scenes?.[0] || null;
   for (const r of STATE.sceneFragRanges) {
     if (idx >= r.startIdx && idx <= r.endIdx) return r.scene;
   }
@@ -601,6 +619,7 @@ function renderStage() {
 
 // ─── key moments ─────────────────────────────────────────────────
 function momentForFragIdx(idx) {
+  if (STATE.textOnlyMode) return STATE.sceneData?.keyMoments?.[0] || null;
   for (const r of STATE.momentFragRanges) {
     if (idx >= r.startIdx && idx <= r.endIdx) return r.moment;
   }
@@ -676,6 +695,8 @@ async function loadChapter(idx, { virtualTime = 0, autoplay = false } = {}) {
   STATE.fragments = flat;
   STATE.activeFragIdx = -1;
   STATE.segIdx = 0;
+  STATE.textOnlyMode = flat.length === 0;
+  document.body.dataset.textOnly = STATE.textOnlyMode ? "on" : "off";
 
   // render XHTML
   const r = await fetch(ch.xhtml);
@@ -755,6 +776,7 @@ async function loadSegment(segIdx, intoOffset = 0, { autoplay = false } = {}) {
 // ─── highlight ───────────────────────────────────────────────────
 function applyHighlight(idx) {
   const fragments = STATE.fragments;
+  if (!fragments.length) return;        // text-only mode — no fragments to highlight
   if (idx === STATE.activeFragIdx) return;
 
   // clean previous

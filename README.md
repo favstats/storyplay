@@ -6,18 +6,28 @@ Storyplay turns any audiobook + ebook pair into a synced reading experience: wor
 
 Open source. MIT-licensed. Ships with public-domain demo books and demo packs so you can run it without any AI generation. The reader is a single HTML page plus a small Python static server — no build step, no framework, no telemetry.
 
-## Status
-
-Alpha. The reader, the pack loader, and the demo packs work. The audio alignment pipeline (Storyteller / Whisper) is a separate dependency that you run once per book.
-
-## Quick start
+## One-command install
 
 ```bash
-cd ~/storyplay
-./start.sh         # serves on http://localhost:8000
+curl -fsSL https://raw.githubusercontent.com/favstats/storyplay/main/install.sh | bash
 ```
 
-Open the URL and pick a book from the library.
+That clones the repo into `~/storyplay`, fetches the three public-domain demo books from Project Gutenberg, downloads the curated public-domain pack art from Wikimedia, builds the library, and opens it in your browser. The only prerequisites are `git` and Python 3.10+ — both already installed on most Macs and Linux machines.
+
+If you'd rather see what's happening:
+
+```bash
+git clone https://github.com/favstats/storyplay.git ~/storyplay
+cd ~/storyplay
+python3 tools/setup-demos.py      # one-time: fetch demo text + art
+./start.sh                         # open library in browser
+```
+
+Everything is idempotent — re-running `setup-demos.py` skips books that are already on disk.
+
+## Status
+
+Alpha. The reader, the pack loader, the library, and the public-domain demos work end-to-end as text + curated art. Adding word-by-word audio sync to a book is an optional extra step using [Storyteller](https://gitlab.com/smoores/storyteller) — see [Bring your own book](#bring-your-own-book) below.
 
 ## Layout
 
@@ -61,13 +71,22 @@ Audio comes from LibriVox; text comes from Project Gutenberg.
 
 ## Bring your own book
 
-You need:
+Two paths, depending on how much you want.
 
-1. An audiobook (m4b / mp3 / aac)
-2. The matching ebook (epub)
-3. [Storyteller](https://gitlab.com/smoores/storyteller) (Docker-based) to align them into sentence-level timing data.
+### Text-only (no audio sync, no Storyteller)
 
-Once Storyteller produces the aligned EPUB, point `tools/build.py` at it and you get a manifest the reader can play.
+1. Drop an unpacked EPUB into `books/<slug>/content/` so that `books/<slug>/content/package.opf` exists.
+2. Write `books/<slug>/book.json` with `slug`, `title`, `creator`, and `license`.
+3. `python3 build.py <slug>` writes a manifest. `python3 tools/build-library.py` re-indexes the library.
+4. Reload — your book is there. You can build a pack for it whenever you want.
+
+This is the path the demo books use. The reader still renders text and any pack visuals you've authored; only word-by-word audio sync is missing.
+
+### Full audio sync (Storyteller alignment)
+
+1. An audiobook (m4b / mp3 / aac) and the matching EPUB.
+2. [Storyteller](https://gitlab.com/smoores/storyteller) (Docker-based) to align them into sentence-level timing data.
+3. Point Storyteller's output at `books/<slug>/content/`, run `python3 build.py <slug>`, and you get a manifest the reader can play with full SMIL Media Overlay sync.
 
 ## Packs
 

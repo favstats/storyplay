@@ -1,0 +1,32 @@
+{
+  "_comment": "Pack-wide default — used by every chapter that doesn't have its own <chapterId>.json. The reader falls back to this so even an unauthored book gets visuals.",
+  "chapterId": "_default_",
+  "characters": {
+    "dracula":     { "name": "Count Dracula",   "portrait": "characters/dracula.jpg" },
+    "harker":      { "name": "Jonathan Harker", "portrait": "characters/harker-hutter.jpg" },
+    "stoker":      { "name": "Bram Stoker",     "portrait": "characters/stoker.jpg" }
+  },
+  "scenes": [
+    {
+      "id": "default",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        { "id": "harker",  "side": "left"  },
+        { "id": "dracula", "side": "right" }
+      ],
+      "startFragId": "__default__",
+      "endFragId":   "__default__"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id":            "nosferatu-title",
+      "image":         "moments/moment-nosferatu-title.jpg",
+      "title":         "Nosferatu — Eine Symphonie des Grauens (1922)",
+      "anchorFragId":  "__default__",
+      "durationFrags": 4,
+      "inline":        false
+    }
+  ],
+  "speakers": []
+}

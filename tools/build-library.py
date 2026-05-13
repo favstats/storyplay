@@ -39,7 +39,11 @@ def collect_books():
         info["slug"] = info.get("slug", d.name)
         if manifest.exists():
             m = json.loads(manifest.read_text())
-            info["chapterCount"] = sum(1 for c in m.get("chapters", []) if c.get("segments"))
+            chapters = m.get("chapters", [])
+            audible = [c for c in chapters if c.get("segments")]
+            info["chapterCount"] = len(chapters)
+            info["audibleChapterCount"] = len(audible)
+            info["hasAudio"] = bool(audible)
             info["totalDuration"] = m.get("totalDuration", 0)
             info["totalDurationLabel"] = fmt_duration(info["totalDuration"])
             cover = m.get("cover")
