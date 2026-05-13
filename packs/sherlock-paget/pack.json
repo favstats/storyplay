@@ -1,0 +1,13 @@
+{
+  "slug": "sherlock-paget",
+  "name": "Sherlock Holmes — Paget Originals",
+  "targetBook": "sherlock-bohemia",
+  "author": "Storyplay",
+  "version": "0.1.0",
+  "license": "Public Domain — Sidney Paget illustrations originally published in The Strand Magazine, 1891-1908.",
+  "art": {
+    "source": "public-domain",
+    "notes": "Sidney Paget's original Strand Magazine illustrations, drawn by Doyle's contemporary specifically for these stories. Canonical reference for Holmes' visual identity (deerstalker, Inverness cape, hawk-nosed profile)."
+  },
+  "description": "Pairs Conan Doyle's text with Sidney Paget's original Strand Magazine illustrations — the canonical visual reference for Holmes, drawn for the actual scenes. The pack proves the system: public-domain art chosen by humans, no AI involved."
+}

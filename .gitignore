@@ -1,0 +1,33 @@
+# Book content (audio + aligned EPUB) is usually copyrighted and always huge.
+# Storyplay tracks book.json + pack.json + code; the actual book content stays
+# local. For public-domain demos, content is fetched on the user's machine via
+# tools/fetch-gutenberg.py + Storyteller alignment.
+books/*/content/
+books/*/manifest.json
+books/*/*.epub
+
+# Personal/AI-generated packs — don't commit by default.
+packs/*-personal/
+packs/*-private/
+
+# Generation cache
+**/.cache/
+**/*.cache.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / agent state
+.vscode/
+.idea/
+.claude/
+
+# Built pack archives — produce on demand
+dist/
+*.spk

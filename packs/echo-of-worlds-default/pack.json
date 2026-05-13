@@ -1,0 +1,15 @@
+{
+  "slug": "echo-of-worlds-default",
+  "name": "Echo of Worlds — Default",
+  "targetBook": "echo-of-worlds",
+  "author": "favstats",
+  "version": "0.1.0",
+  "license": "All-rights-reserved — personal pack, not for redistribution.",
+  "art": {
+    "source": "ai-generated",
+    "model": "gpt-image-2",
+    "notes": "Personal pack; original AI-generated images were lost in a tooling accident on 2026-05-12 and have not yet been regenerated."
+  },
+  "chapters": [],
+  "description": "Personal pack — characters, scenes, and key moments for M.R. Carey's Pandominion world. Empty until regenerated."
+}

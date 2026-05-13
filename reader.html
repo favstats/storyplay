@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storyplay — Reader</title>
+<link rel="stylesheet" href="reader.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="vinyl">
+
+<div id="scanlines" aria-hidden="true"></div>
+<div id="hud-frame" aria-hidden="true">
+  <span class="hud-corner tl"></span><span class="hud-corner tr"></span>
+  <span class="hud-corner bl"></span><span class="hud-corner br"></span>
+</div>
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div id="scene-bg" aria-hidden="true">
+  <div id="scene-bg-current"></div>
+  <div id="scene-bg-next"></div>
+</div>
+<aside id="character-stack" aria-hidden="true"></aside>
+<div id="stage" aria-hidden="true">
+  <div class="stage-slot stage-left" data-slot="left"></div>
+  <div class="stage-slot stage-right" data-slot="right"></div>
+</div>
+<div id="key-moment" aria-hidden="true">
+  <figure id="key-moment-card">
+    <img id="key-moment-img" alt="">
+    <figcaption id="key-moment-caption"></figcaption>
+  </figure>
+</div>
+<div id="lightbox" aria-hidden="true" role="dialog">
+  <button id="lightbox-close" aria-label="Close">×</button>
+  <button id="lightbox-flip" aria-label="Flip horizontally" title="Flip horizontally (saved per character)">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+  </button>
+  <figure id="lightbox-figure">
+    <img id="lightbox-img" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<header id="topbar">
+  <button id="toc-toggle" class="iconbtn" aria-label="Chapters">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <div id="bookmeta">
+    <div id="book-title"></div>
+    <div id="book-creator"></div>
+  </div>
+  <div id="hud-readout" aria-hidden="true">
+    <span id="hud-chapter">CH 01/73</span>
+    <span id="hud-time">T+00:00:00</span>
+    <span id="hud-speed">x1.0</span>
+  </div>
+  <div id="context-stepper" aria-label="Context window">
+    <button id="ctx-minus" class="iconbtn" aria-label="Less context (F)">−</button>
+    <span id="ctx-display" title="Context window — F to step down, Shift+F to step up">Page</span>
+    <button id="ctx-plus" class="iconbtn" aria-label="More context (Shift+F)">+</button>
+  </div>
+  <select id="theme-select" aria-label="Theme">
+    <option value="vinyl">Vinyl</option>
+    <option value="cinema">Cinema</option>
+    <option value="karaoke">Karaoke</option>
+    <option value="scifi">Holo</option>
+  </select>
+  <button id="settings-toggle" class="iconbtn" aria-label="Settings" title="Customize colors, fonts, size">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  </button>
+</header>
+
+<aside id="settings" aria-label="Settings">
+  <div id="settings-header">
+    <span>SETTINGS</span>
+    <button id="settings-close" class="iconbtn" aria-label="Close">×</button>
+  </div>
+  <div id="settings-body">
+    <section class="settings-group">
+      <h4>Colors</h4>
+      <label class="settings-row">
+        <span>Background</span>
+        <input type="color" data-var="--u-bg">
+        <button class="settings-clear" data-var="--u-bg" aria-label="Reset">↺</button>
+      </label>
+      <label class="settings-row">
+        <span>Text</span>
+        <input type="color" data-var="--u-fg">
+        <button class="settings-clear" data-var="--u-fg" aria-label="Reset">↺</button>
+      </label>
+      <label class="settings-row">
+        <span>Active sentence</span>
+        <input type="color" data-var="--u-active">
+        <button class="settings-clear" data-var="--u-active" aria-label="Reset">↺</button>
+      </label>
+      <label class="settings-row">
+        <span>Highlight wash</span>
+        <input type="color" data-var="--u-accent">
+        <button class="settings-clear" data-var="--u-accent" aria-label="Reset">↺</button>
+      </label>
+    </section>
+    <section class="settings-group">
+      <h4>Typography</h4>
+      <label class="settings-row">
+        <span>Reading font</span>
+        <select data-var="--u-font-reading">
+          <option value="">— default —</option>
+          <option value='"EB Garamond", Georgia, serif'>EB Garamond</option>
+          <option value='"Playfair Display", Georgia, serif'>Playfair Display</option>
+          <option value='Georgia, "Times New Roman", serif'>Georgia</option>
+          <option value='"Iowan Old Style", Charter, Georgia, serif'>Iowan Old Style</option>
+          <option value='Charter, Georgia, serif'>Charter</option>
+          <option value='"Inter", system-ui, sans-serif'>Inter</option>
+          <option value='-apple-system, BlinkMacSystemFont, sans-serif'>System sans</option>
+          <option value='"JetBrains Mono", ui-monospace, monospace'>JetBrains Mono</option>
+        </select>
+        <button class="settings-clear" data-var="--u-font-reading" aria-label="Reset">↺</button>
+      </label>
+      <label class="settings-row">
+        <span>Display font</span>
+        <select data-var="--u-font-display">
+          <option value="">— default —</option>
+          <option value='"Playfair Display", Georgia, serif'>Playfair Display</option>
+          <option value='"EB Garamond", Georgia, serif'>EB Garamond</option>
+          <option value='Georgia, serif'>Georgia</option>
+          <option value='"Inter", system-ui, sans-serif'>Inter</option>
+          <option value='"Space Grotesk", system-ui, sans-serif'>Space Grotesk</option>
+        </select>
+        <button class="settings-clear" data-var="--u-font-display" aria-label="Reset">↺</button>
+      </label>
+    </section>
+    <section class="settings-group">
+      <h4>Size</h4>
+      <label class="settings-row">
+        <span>Font size</span>
+        <input type="range" data-var="--u-font-size" data-unit="px" min="14" max="60" step="1">
+        <span class="settings-value" data-for="--u-font-size">—</span>
+      </label>
+      <label class="settings-row">
+        <span>Line height</span>
+        <input type="range" data-var="--u-line-height" min="1.1" max="2.2" step="0.05">
+        <span class="settings-value" data-for="--u-line-height">—</span>
+      </label>
+      <label class="settings-row">
+        <span>Reading width</span>
+        <input type="range" data-var="--u-content-width" data-unit="rem" min="22" max="64" step="1">
+        <span class="settings-value" data-for="--u-content-width">—</span>
+      </label>
+    </section>
+    <section class="settings-group">
+      <h4>Visual layers (experimental)</h4>
+      <label class="settings-row settings-toggle">
+        <span>Scene backgrounds</span>
+        <input type="checkbox" data-toggle="scenes">
+      </label>
+      <label class="settings-row settings-toggle">
+        <span>Character overlays</span>
+        <input type="checkbox" data-toggle="characters">
+      </label>
+      <label class="settings-row settings-toggle">
+        <span>Highlight speaker</span>
+        <input type="checkbox" data-toggle="speakers">
+      </label>
+      <label class="settings-row settings-toggle">
+        <span>Key moment images</span>
+        <input type="checkbox" data-toggle="moments">
+      </label>
+      <p class="settings-note">Only chapter 2 (“Kavak Dromishel”) has data prepared for now.</p>
+    </section>
+    <div class="settings-footer">
+      <button id="settings-reset">Reset all to theme defaults</button>
+    </div>
+  </div>
+</aside>
+
+<aside id="toc" aria-label="Table of contents">
+  <div id="toc-header">
+    <span>CHAPTERS</span>
+    <button id="toc-close" class="iconbtn" aria-label="Close">×</button>
+  </div>
+  <ol id="toc-list"></ol>
+</aside>
+
+<main id="reader">
+  <article id="page"></article>
+</main>
+
+<footer id="player">
+  <div id="sentence-progress" aria-hidden="true"></div>
+  <div id="player-row">
+    <button id="prev-ch" class="iconbtn" aria-label="Previous chapter">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M16 6l-8 6 8 6V6z M6 6v12" stroke="currentColor" stroke-width="2" fill="currentColor" stroke-linejoin="round"/></svg>
+    </button>
+    <button id="rewind" class="iconbtn" aria-label="Back 15 seconds">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 5V2L7 6l5 4V7a6 6 0 110 12 6 6 0 01-5.65-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><text x="12" y="16" text-anchor="middle" font-size="7" fill="currentColor" font-family="JetBrains Mono, monospace">15</text></svg>
+    </button>
+    <button id="playpause" class="iconbtn big" aria-label="Play/pause">
+      <svg id="icon-play" viewBox="0 0 24 24" width="28" height="28"><path d="M7 4l14 8-14 8V4z" fill="currentColor"/></svg>
+      <svg id="icon-pause" viewBox="0 0 24 24" width="28" height="28" style="display:none"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+    </button>
+    <button id="forward" class="iconbtn" aria-label="Forward 15 seconds">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 5V2l5 4-5 4V7a6 6 0 100 12 6 6 0 005.65-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><text x="12" y="16" text-anchor="middle" font-size="7" fill="currentColor" font-family="JetBrains Mono, monospace">15</text></svg>
+    </button>
+    <button id="next-ch" class="iconbtn" aria-label="Next chapter">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 6l8 6-8 6V6z M18 6v12" stroke="currentColor" stroke-width="2" fill="currentColor" stroke-linejoin="round"/></svg>
+    </button>
+    <div id="scrub">
+      <span id="time-now">00:00</span>
+      <div id="track">
+        <div id="track-fill"></div>
+        <input id="track-input" type="range" min="0" max="1000" value="0">
+      </div>
+      <span id="time-total">00:00</span>
+    </div>
+    <select id="speed">
+      <option value="0.8">0.8×</option>
+      <option value="1" selected>1.0×</option>
+      <option value="1.15">1.15×</option>
+      <option value="1.25">1.25×</option>
+      <option value="1.5">1.5×</option>
+      <option value="1.75">1.75×</option>
+      <option value="2">2.0×</option>
+    </select>
+  </div>
+</footer>
+
+<audio id="audio" preload="metadata"></audio>
+
+<script src="reader.js"></script>
+</body>
+</html>

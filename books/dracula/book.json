@@ -1,0 +1,14 @@
+{
+  "slug": "dracula",
+  "title": "Dracula",
+  "creator": "Bram Stoker",
+  "year": 1897,
+  "license": "Public domain (text: Project Gutenberg #345 / audio: LibriVox)",
+  "defaultPack": "dracula-public-domain",
+  "description": "Epistolary horror novel told through diaries, letters, and telegrams. Multi-narrator structure — Jonathan Harker, Mina Harker, Dr. Seward, Lucy Westenra, Van Helsing — makes it ideal for showcasing per-speaker visuals.",
+  "tags": ["gothic", "horror", "epistolary", "public-domain"],
+  "sources": {
+    "text":  "https://www.gutenberg.org/ebooks/345",
+    "audio": "https://librivox.org/dracula-by-bram-stoker/"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "frankenstein",
+  "title": "Frankenstein; or, The Modern Prometheus",
+  "creator": "Mary Wollstonecraft Shelley",
+  "year": 1818,
+  "license": "Public domain (text: Project Gutenberg #84 / audio: LibriVox)",
+  "defaultPack": "frankenstein-public-domain",
+  "description": "Gothic novel of creation and abandonment. Walton's framing letters bracket Victor Frankenstein's confession; the Creature's own long testimony forms the moral core. Rich speaking cast — perfect for showcasing per-character art.",
+  "tags": ["gothic", "philosophical", "epistolary", "public-domain"],
+  "sources": {
+    "text":  "https://www.gutenberg.org/ebooks/84",
+    "audio": "https://librivox.org/frankenstein-or-the-modern-prometheus-by-mary-wollstonecraft-shelley/"
+  }
+}

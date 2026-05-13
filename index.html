@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storyplay — Library</title>
+<link rel="stylesheet" href="library.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="lib-header">
+  <div id="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="6" width="22" height="28" rx="1.5"/>
+        <path d="M11 12h10M11 16h10M11 20h6"/>
+        <path d="M27 6c4 0 8 1.5 8 4v24c0-2.5-4-4-8-4"/>
+        <circle cx="32" cy="20" r="1.2" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <h1>Storyplay</h1>
+      <p>Visual novels from your audiobooks</p>
+    </div>
+  </div>
+  <div id="lib-tools">
+    <a class="ghost-btn" href="https://github.com/favstats/storyplay" target="_blank" rel="noopener">github</a>
+    <a class="ghost-btn" href="docs/creating-a-pack.md" target="_blank">create a pack</a>
+  </div>
+</header>
+
+<main id="lib-main">
+  <section id="lib-section-books">
+    <h2>Books</h2>
+    <div id="book-grid" aria-busy="true"></div>
+  </section>
+  <section id="lib-section-empty" hidden>
+    <p class="empty-msg">No books found. Add an aligned EPUB under <code>books/&lt;slug&gt;/content/</code>, drop a <code>book.json</code> next to it, then run <code>python3 build.py &lt;slug&gt;</code>.</p>
+  </section>
+</main>
+
+<footer id="lib-footer">
+  <span>MIT-licensed. Demo books are public-domain via Project Gutenberg + LibriVox.</span>
+</footer>
+
+<script src="library.js"></script>
+</body>
+</html>

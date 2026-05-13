@@ -1,0 +1,13 @@
+{
+  "slug": "dracula-public-domain",
+  "name": "Dracula — Vintage Cinema",
+  "targetBook": "dracula",
+  "author": "Storyplay",
+  "version": "0.1.0",
+  "license": "Public Domain / CC0 — see assets-sources.md for per-image attribution.",
+  "art": {
+    "source": "public-domain",
+    "notes": "Nosferatu (F. W. Murnau, 1922) film stills + 19th-century Romantic landscape painting + period portrait photography."
+  },
+  "description": "Atmospheric demo pack using only public-domain sources. F.W. Murnau's Nosferatu provides the visual grammar for vampires and Carpathian dread; Caspar David Friedrich landscapes set the gothic mood; period photographs portray the Victorian cast."
+}

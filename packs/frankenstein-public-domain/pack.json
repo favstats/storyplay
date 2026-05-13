@@ -1,0 +1,13 @@
+{
+  "slug": "frankenstein-public-domain",
+  "name": "Frankenstein — Romantic Engravings",
+  "targetBook": "frankenstein",
+  "author": "Storyplay",
+  "version": "0.1.0",
+  "license": "Public Domain — see assets-sources.md for per-image attribution.",
+  "art": {
+    "source": "public-domain",
+    "notes": "Theodor von Holst's 1831 frontispiece, Caspar David Friedrich landscapes, William Blake plates, 19th-century anatomical engravings."
+  },
+  "description": "Pairs Mary Shelley's text with Romantic-era painting and engraving. Holst's 1831 frontispiece for the Creature; Friedrich's Alpine landscapes for the Arctic and Mont Blanc; Blake's mythic figures for the Creature's philosophical monologues."
+}

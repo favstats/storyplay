@@ -1,0 +1,144 @@
+{
+  "books": [
+    {
+      "slug": "dracula",
+      "title": "Dracula",
+      "creator": "Bram Stoker",
+      "year": 1897,
+      "license": "Public domain (text: Project Gutenberg #345 / audio: LibriVox)",
+      "defaultPack": "dracula-public-domain",
+      "description": "Epistolary horror novel told through diaries, letters, and telegrams. Multi-narrator structure \u2014 Jonathan Harker, Mina Harker, Dr. Seward, Lucy Westenra, Van Helsing \u2014 makes it ideal for showcasing per-speaker visuals.",
+      "tags": [
+        "gothic",
+        "horror",
+        "epistolary",
+        "public-domain"
+      ],
+      "sources": {
+        "text": "https://www.gutenberg.org/ebooks/345",
+        "audio": "https://librivox.org/dracula-by-bram-stoker/"
+      },
+      "chapterCount": 0,
+      "totalDuration": 0,
+      "totalDurationLabel": "",
+      "available": false,
+      "packs": [
+        {
+          "slug": "dracula-public-domain",
+          "name": "Dracula \u2014 Vintage Cinema",
+          "description": "Atmospheric demo pack using only public-domain sources. F.W. Murnau's Nosferatu provides the visual grammar for vampires and Carpathian dread; Caspar David Friedrich landscapes set the gothic mood; period photographs portray the Victorian cast.",
+          "art": {
+            "source": "public-domain",
+            "notes": "Nosferatu (F. W. Murnau, 1922) film stills + 19th-century Romantic landscape painting + period portrait photography."
+          },
+          "license": "Public Domain / CC0 \u2014 see assets-sources.md for per-image attribution."
+        }
+      ]
+    },
+    {
+      "slug": "echo-of-worlds",
+      "title": "Echo of Worlds",
+      "creator": "M. R. Carey",
+      "series": "Pandominion #2",
+      "year": 2024,
+      "license": "Copyrighted \u2014 for personal use only. Not shipped with Storyplay.",
+      "defaultPack": "echo-of-worlds-default",
+      "description": "Book two of the Pandominion. A trillion-world civilisation faces a hostile machine intelligence \u2014 Carey's interlocking POVs span ambassadors, spies, and a sentient rabbit.",
+      "tags": [
+        "science fiction",
+        "space opera",
+        "first contact"
+      ],
+      "chapterCount": 73,
+      "totalDuration": 60838.885,
+      "totalDurationLabel": "16h 53m",
+      "cover": "books/echo-of-worlds/content/images/9780316504928.jpg",
+      "available": true,
+      "packs": [
+        {
+          "slug": "echo-of-worlds-default",
+          "name": "Echo of Worlds \u2014 Default",
+          "description": "Personal pack \u2014 characters, scenes, and key moments for M.R. Carey's Pandominion world. Empty until regenerated.",
+          "art": {
+            "source": "ai-generated",
+            "model": "gpt-image-2",
+            "notes": "Personal pack; original AI-generated images were lost in a tooling accident on 2026-05-12 and have not yet been regenerated."
+          },
+          "license": "All-rights-reserved \u2014 personal pack, not for redistribution."
+        }
+      ]
+    },
+    {
+      "slug": "frankenstein",
+      "title": "Frankenstein; or, The Modern Prometheus",
+      "creator": "Mary Wollstonecraft Shelley",
+      "year": 1818,
+      "license": "Public domain (text: Project Gutenberg #84 / audio: LibriVox)",
+      "defaultPack": "frankenstein-public-domain",
+      "description": "Gothic novel of creation and abandonment. Walton's framing letters bracket Victor Frankenstein's confession; the Creature's own long testimony forms the moral core. Rich speaking cast \u2014 perfect for showcasing per-character art.",
+      "tags": [
+        "gothic",
+        "philosophical",
+        "epistolary",
+        "public-domain"
+      ],
+      "sources": {
+        "text": "https://www.gutenberg.org/ebooks/84",
+        "audio": "https://librivox.org/frankenstein-or-the-modern-prometheus-by-mary-wollstonecraft-shelley/"
+      },
+      "chapterCount": 0,
+      "totalDuration": 0,
+      "totalDurationLabel": "",
+      "available": false,
+      "packs": [
+        {
+          "slug": "frankenstein-public-domain",
+          "name": "Frankenstein \u2014 Romantic Engravings",
+          "description": "Pairs Mary Shelley's text with Romantic-era painting and engraving. Holst's 1831 frontispiece for the Creature; Friedrich's Alpine landscapes for the Arctic and Mont Blanc; Blake's mythic figures for the Creature's philosophical monologues.",
+          "art": {
+            "source": "public-domain",
+            "notes": "Theodor von Holst's 1831 frontispiece, Caspar David Friedrich landscapes, William Blake plates, 19th-century anatomical engravings."
+          },
+          "license": "Public Domain \u2014 see assets-sources.md for per-image attribution."
+        }
+      ]
+    },
+    {
+      "slug": "sherlock-bohemia",
+      "title": "A Scandal in Bohemia",
+      "creator": "Arthur Conan Doyle",
+      "series": "The Adventures of Sherlock Holmes #1",
+      "year": 1891,
+      "license": "Public domain (text: Project Gutenberg #1661 / audio: LibriVox)",
+      "defaultPack": "sherlock-paget",
+      "description": "The first story in *The Adventures of Sherlock Holmes*. Holmes is hired by the King of Bohemia to recover compromising letters from the only person ever to outwit him \u2014 Irene Adler. Short, dialogue-rich, ideal for showcasing the per-speaker visual system.",
+      "tags": [
+        "mystery",
+        "detective",
+        "short-story",
+        "public-domain"
+      ],
+      "sources": {
+        "text": "https://www.gutenberg.org/ebooks/1661",
+        "audio": "https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/"
+      },
+      "chapterCount": 0,
+      "totalDuration": 0,
+      "totalDurationLabel": "",
+      "available": false,
+      "packs": [
+        {
+          "slug": "sherlock-paget",
+          "name": "Sherlock Holmes \u2014 Paget Originals",
+          "description": "Pairs Conan Doyle's text with Sidney Paget's original Strand Magazine illustrations \u2014 the canonical visual reference for Holmes, drawn for the actual scenes. The pack proves the system: public-domain art chosen by humans, no AI involved.",
+          "art": {
+            "source": "public-domain",
+            "notes": "Sidney Paget's original Strand Magazine illustrations, drawn by Doyle's contemporary specifically for these stories. Canonical reference for Holmes' visual identity (deerstalker, Inverness cape, hawk-nosed profile)."
+          },
+          "license": "Public Domain \u2014 Sidney Paget illustrations originally published in The Strand Magazine, 1891-1908."
+        }
+      ]
+    }
+  ],
+  "orphanPacks": []
+}
