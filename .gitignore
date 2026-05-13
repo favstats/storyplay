@@ -5,6 +5,7 @@
 books/*/content/
 books/*/manifest.json
 books/*/*.epub
+books/*/audio/         # LibriVox MP3s fetched on demand — too large for repo
 
 # Personal/AI-generated packs — don't commit by default.
 packs/*-personal/

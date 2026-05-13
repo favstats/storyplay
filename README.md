@@ -84,9 +84,17 @@ This is the path the demo books use. The reader still renders text and any pack 
 
 ### Full audio sync (Storyteller alignment)
 
-1. An audiobook (m4b / mp3 / aac) and the matching EPUB.
-2. [Storyteller](https://gitlab.com/smoores/storyteller) (Docker-based) to align them into sentence-level timing data.
-3. Point Storyteller's output at `books/<slug>/content/`, run `python3 build.py <slug>`, and you get a manifest the reader can play with full SMIL Media Overlay sync.
+Word-by-word audio sync is an optional upgrade. The three demos can be lifted from text-only to fully aligned by running:
+
+```bash
+python3 tools/fetch-librivox.py dracula        # downloads LibriVox audio
+python3 tools/fetch-librivox.py frankenstein
+python3 tools/fetch-librivox.py sherlock-bohemia
+```
+
+then feeding `books/<slug>/audio/` + the EPUB to [Storyteller](https://gitlab.com/smoores/storyteller). The full walk-through is in **[docs/audio-alignment.md](docs/audio-alignment.md)**. Plan for 2-24 hours of CPU time per book — it's Whisper transcribing the entire audiobook. You can let it run overnight.
+
+For your own books: any EPUB + any audiobook pair (m4b / mp3 / aac) works the same way.
 
 ## Packs
 
