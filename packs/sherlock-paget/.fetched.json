@@ -1,0 +1,87 @@
+{
+  "backgrounds/fireside.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-062-ThenHeStoodBeforeTheFire.jpg?width=1600",
+    "attribution": "Sidney Paget, 'Then he stood before the fire' \u2014 Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655153
+  },
+  "backgrounds/baker-street-interior.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-063-ICarefullyExaminedTheWriting.jpg?width=1600",
+    "attribution": "Sidney Paget, 'I carefully examined the writing' \u2014 Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655154
+  },
+  "backgrounds/briony-lodge-street.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-067-ADrunkenLookingGroom.jpg?width=1600",
+    "attribution": "Sidney Paget, 'A drunken-looking groom' \u2014 Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655154
+  },
+  "backgrounds/st-monicas-church.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-069-IFoundMyselfMumblingResponses.jpg?width=1600",
+    "attribution": "Sidney Paget, 'I found myself mumbling responses' \u2014 Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655155
+  },
+  "moments/moment-yawn.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-062-ThenHeStoodBeforeTheFire.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'Then he stood before the fire'. Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655155
+  },
+  "moments/moment-examines-writing.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-063-ICarefullyExaminedTheWriting.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'I carefully examined the writing'. Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655156
+  },
+  "moments/moment-king-enters.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-064-AManEntered.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'A man entered'. Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655156
+  },
+  "moments/moment-unmasking.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-065-HeToreTheMaskFromHisFace.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'He tore the mask from his face'. Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655157
+  },
+  "moments/moment-disguise.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-067-ADrunkenLookingGroom.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'A drunken-looking groom' (Holmes disguised). Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655157
+  },
+  "moments/moment-wedding.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-069-IFoundMyselfMumblingResponses.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'I found myself mumbling responses' (Watson at the church). Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655158
+  },
+  "moments/moment-fire-cry.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-071-HeGaveACryAndDropped.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'He gave a cry and dropped' (smoke-rocket distraction). Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655158
+  },
+  "moments/moment-photograph.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strand2-074-ThisPhotograph.jpg?width=1400",
+    "attribution": "Sidney Paget \u2014 'This photograph' (final scene with Irene Adler's note). Strand Magazine vol. 2, July 1891. Public domain.",
+    "fetched_at": 1778655159
+  },
+  "characters/holmes.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait of Sherlock Holmes by Sidney Paget-Cropped.jpg?width=900",
+    "attribution": "Sidney Paget (1860-1908) \u2014 portrait of Sherlock Holmes. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655169
+  },
+  "characters/holmes-alt.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sherlock Holmes Portrait Paget.jpg?width=900",
+    "attribution": "Sidney Paget \u2014 alternate Holmes portrait. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655170
+  },
+  "characters/watson.png": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paget holmes.png?width=900",
+    "attribution": "Sidney Paget \u2014 Holmes/Watson study. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655170
+  },
+  "characters/watson-greek-interpreter.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sherlock Holmes %26 Watson - The Greek Interpreter - Sidney Paget.jpg?width=900",
+    "attribution": "Sidney Paget \u2014 Holmes & Watson, *The Greek Interpreter*, Strand Magazine 1893. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655171
+  },
+  "characters/irene-adler.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Irene Adler Cigarette Card.jpg?width=800",
+    "attribution": "Irene Adler \u2014 period cigarette card portrait. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655171
+  }
+}

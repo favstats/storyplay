@@ -1,15 +1,39 @@
 {
   "slug": "echo-of-worlds-default",
-  "name": "Echo of Worlds — Default",
+  "name": "Echo of Worlds \u2014 Default",
   "targetBook": "echo-of-worlds",
   "author": "favstats",
   "version": "0.1.0",
-  "license": "All-rights-reserved — personal pack, not for redistribution.",
+  "license": "All-rights-reserved \u2014 personal pack, not for redistribution.",
   "art": {
     "source": "ai-generated",
     "model": "gpt-image-2",
-    "notes": "Personal pack; original AI-generated images were lost in a tooling accident on 2026-05-12 and have not yet been regenerated."
+    "notes": "Personal pack \u2014 original AI-generated images. Partial recovery from Chrome cache after a tooling accident on 2026-05-12; missing images can be regenerated from the prompts embedded in each chapter JSON."
   },
-  "chapters": [],
-  "description": "Personal pack — characters, scenes, and key moments for M.R. Carey's Pandominion world. Empty until regenerated."
+  "chapters": [
+    "chapter002",
+    "chapter003",
+    "chapter004",
+    "chapter005",
+    "chapter006",
+    "chapter007",
+    "chapter008",
+    "chapter009",
+    "chapter010",
+    "chapter011",
+    "chapter012",
+    "chapter013",
+    "chapter014",
+    "chapter015",
+    "chapter016",
+    "chapter017",
+    "chapter018",
+    "chapter019",
+    "chapter020",
+    "chapter021",
+    "chapter022",
+    "chapter023",
+    "chapter024"
+  ],
+  "description": "Personal pack \u2014 characters, scenes, and key moments for M.R. Carey's Pandominion world. 23 chapter JSONs with prompts; partial PNG coverage (some images still need regeneration)."
 }

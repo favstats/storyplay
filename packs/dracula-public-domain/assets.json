@@ -1,0 +1,107 @@
+[
+  {
+    "filename": "dracula.jpg",
+    "category": "characters",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Max Schreck as Count Orlok in Nosferatu – Eine Symphonie des Grauens (1922).jpg",
+    "width": 900,
+    "attribution": "Max Schreck as Count Orlok in *Nosferatu — Eine Symphonie des Grauens*, dir. F.W. Murnau, 1922. Public domain (pre-1929) via Wikimedia Commons."
+  },
+  {
+    "filename": "stoker.jpg",
+    "category": "characters",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bram Stoker 1906.jpg",
+    "width": 800,
+    "attribution": "Bram Stoker, photographed 1906. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "harker-hutter.jpg",
+    "category": "characters",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bram Stoker photogravure by Downey (cropped).jpg",
+    "width": 800,
+    "attribution": "W. & D. Downey photogravure of Bram Stoker (cropped) — used as a period gentleman stand-in for Jonathan Harker. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "carpathian-pass.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz Scheyerer und Hauer Landschaft mit Karpaten 1816.jpg",
+    "width": 1800,
+    "attribution": "Franz Scheyerer & Hauer — *Carpathian Landscape*, 1816. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "castle-ruins.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The Abbey in the Oakwood by Caspar David Friedrich.jpg",
+    "width": 1800,
+    "attribution": "Caspar David Friedrich — *The Abbey in the Oakwood* (Abtei im Eichwald, 1809-10). Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "cemetery-gate.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - The Cemetery Gate (The Churchyard) - WGA8276.jpg",
+    "width": 1800,
+    "attribution": "Caspar David Friedrich — *The Cemetery Gate*. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "cemetery-dusk.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich Cemetery at Dusk.jpg",
+    "width": 1800,
+    "attribution": "Caspar David Friedrich — *Cemetery at Dusk*. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "monk-by-sea.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Monk by the Sea.jpg",
+    "width": 1800,
+    "attribution": "Caspar David Friedrich — *Monk by the Sea* (Mönch am Meer, 1808-10). Used here for Whitby/sea scenes. Public domain."
+  },
+  {
+    "filename": "wanderer.jpg",
+    "category": "backgrounds",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg",
+    "width": 1800,
+    "attribution": "Caspar David Friedrich — *Wanderer above the Sea of Fog* (1818). Public domain."
+  },
+  {
+    "filename": "moment-nosferatu-title.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nosferatu title.jpg",
+    "width": 1400,
+    "attribution": "Title card of *Nosferatu* (1922), dir. F.W. Murnau. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "moment-orlok-first-look.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Max Schreck as Count Orlok in Nosferatu – Eine Symphonie des Grauens (1922).jpg",
+    "width": 1600,
+    "attribution": "Max Schreck as Count Orlok in *Nosferatu* (1922). Public domain."
+  },
+  {
+    "filename": "moment-abbey-ruins.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The Abbey in the Oakwood by Caspar David Friedrich.jpg",
+    "width": 1600,
+    "attribution": "Caspar David Friedrich — *The Abbey in the Oakwood* (1809-10). Public domain."
+  },
+  {
+    "filename": "moment-cemetery.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich Cemetery at Dusk.jpg",
+    "width": 1600,
+    "attribution": "Caspar David Friedrich — *Cemetery at Dusk*. Public domain via Wikimedia Commons."
+  },
+  {
+    "filename": "moment-monk-sea.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Monk by the Sea.jpg",
+    "width": 1600,
+    "attribution": "Caspar David Friedrich — *Monk by the Sea* (Mönch am Meer, 1808-10). Used here for the Demeter scenes. Public domain."
+  },
+  {
+    "filename": "moment-carpathian-arrival.jpg",
+    "category": "moments",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz Scheyerer und Hauer Landschaft mit Karpaten 1816.jpg",
+    "width": 1600,
+    "attribution": "Franz Scheyerer & Hauer — *Carpathian Landscape*, 1816. Public domain."
+  }
+]

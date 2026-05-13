@@ -1,0 +1,82 @@
+{
+  "characters/victor.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankenstein, or the Modern Prometheus (Revised Edition, 1831) Victor.jpg?width=900",
+    "attribution": "Theodor von Holst \u2014 Victor Frankenstein, frontispiece detail, 1831 revised edition. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655237
+  },
+  "characters/creature.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankenstein, or the Modern Prometheus (Revised Edition, 1831) Creature.jpg?width=900",
+    "attribution": "Theodor von Holst \u2014 The Creature, frontispiece detail, 1831 revised edition. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655237
+  },
+  "characters/mary-shelley.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rothwell - Mary Shelley (Enanced Crop).jpg?width=800",
+    "attribution": "Richard Rothwell \u2014 portrait of Mary Wollstonecraft Shelley, c.1840. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655238
+  },
+  "characters/walton.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg?width=900",
+    "attribution": "Caspar David Friedrich \u2014 *Wanderer above the Sea of Fog* (1818), used here as a Walton stand-in. Public domain.",
+    "fetched_at": 1778655239
+  },
+  "characters/ancient-of-days.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The Ancient of Days by William Blake.jpg?width=900",
+    "attribution": "William Blake \u2014 *The Ancient of Days* (1794) \u2014 used here as a symbolic creator figure. Public domain.",
+    "fetched_at": 1778655240
+  },
+  "backgrounds/sea-of-ice.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - The Sea of Ice - WGA8270.jpg?width=1800",
+    "attribution": "Caspar David Friedrich \u2014 *The Sea of Ice* (Das Eismeer / Wreck of Hope, 1823-24). Public domain.",
+    "fetched_at": 1778655240
+  },
+  "backgrounds/wanderer-sea-fog.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg?width=1800",
+    "attribution": "Caspar David Friedrich \u2014 *Wanderer above the Sea of Fog* (Der Wanderer \u00fcber dem Nebelmeer, 1818). Public domain.",
+    "fetched_at": 1778655241
+  },
+  "backgrounds/riesengebirge.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich Paysage de Riesengebirge avec la brume montante.jpg?width=1800",
+    "attribution": "Caspar David Friedrich \u2014 *Landscape of the Riesengebirge with Rising Mist*. Public domain.",
+    "fetched_at": 1778655242
+  },
+  "backgrounds/mountain-rainbow.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Gebirgslandschaft mit Regenbogen.jpg?width=1800",
+    "attribution": "Caspar David Friedrich \u2014 *Mountain Landscape with Rainbow* (c.1809-10). Public domain.",
+    "fetched_at": 1778655243
+  },
+  "backgrounds/mountain-lake-morning.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Landschaft mit Gebirgssee, Morgen.jpg?width=1800",
+    "attribution": "Caspar David Friedrich \u2014 *Landscape with Mountain Lake, Morning*. Public domain.",
+    "fetched_at": 1778655245
+  },
+  "moments/moment-creature-awakens.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frontispiece to Frankenstein 1831.jpg?width=1400",
+    "attribution": "Theodor von Holst \u2014 frontispiece to Frankenstein, 1831 revised edition. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655247
+  },
+  "moments/moment-on-the-ice.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - The Sea of Ice - WGA8270.jpg?width=1600",
+    "attribution": "Caspar David Friedrich \u2014 *The Sea of Ice* (1823-24). Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655248
+  },
+  "moments/moment-wedding-night.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry Fuseli (1741\u20131825), The Nightmare, 1781.jpg?width=1600",
+    "attribution": "Henry Fuseli \u2014 *The Nightmare* (1781) \u2014 used here for the wedding-night murder. Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655248
+  },
+  "moments/moment-ancient-creator.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The Ancient of Days by William Blake.jpg?width=1400",
+    "attribution": "William Blake \u2014 *The Ancient of Days* (1794). Public domain via Wikimedia Commons.",
+    "fetched_at": 1778655249
+  },
+  "moments/moment-alpine-vision.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Gebirgslandschaft mit Regenbogen.jpg?width=1600",
+    "attribution": "Caspar David Friedrich \u2014 *Mountain Landscape with Rainbow* (used for the Chamonix vision). Public domain.",
+    "fetched_at": 1778655250
+  },
+  "moments/moment-wanderer.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar David Friedrich - Wanderer above the Sea of Fog.jpeg?width=1600",
+    "attribution": "Caspar David Friedrich \u2014 *Wanderer above the Sea of Fog* (1818). Public domain.",
+    "fetched_at": 1778655250
+  }
+}

@@ -10,6 +10,14 @@ books/*/*.epub
 packs/*-personal/
 packs/*-private/
 
+# Personal pack tied to a copyrighted book — chapter JSONs describe
+# specific scenes from M.R. Carey's *Echo of Worlds* and the AI-generated
+# images are personal-use only.
+packs/echo-of-worlds-default/characters/
+packs/echo-of-worlds-default/backgrounds/
+packs/echo-of-worlds-default/moments/
+packs/echo-of-worlds-default/chapter*.json
+
 # Generation cache
 **/.cache/
 **/*.cache.json
