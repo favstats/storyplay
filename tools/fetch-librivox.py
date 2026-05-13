@@ -46,10 +46,13 @@ def api_lookup(lid: str) -> dict:
 
 
 def download_zip(url: str, out_path: Path) -> bytes:
-    # LibriVox's url_zip_file contains an unencoded space.
+    # LibriVox's url_zip_file contains an unencoded space — Internet
+    # Archive's "compress" endpoint puts params in the path, not the
+    # query string, so the space sits in parts.path. Re-quote both.
     parts = urllib.parse.urlsplit(url)
+    safe_path = urllib.parse.quote(parts.path, safe="/:%=&")
     safe_query = urllib.parse.quote(parts.query, safe="=&")
-    safe = urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, safe_query, parts.fragment))
+    safe = urllib.parse.urlunsplit((parts.scheme, parts.netloc, safe_path, safe_query, parts.fragment))
     print(f"  GET {safe}")
     req = urllib.request.Request(safe, headers={"User-Agent": UA})
     chunks = []
