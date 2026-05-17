@@ -195,7 +195,11 @@ function refreshTocHighlight() {
 function getToggles() {
   try { return JSON.parse(localStorage.getItem(LS_TOGGLES) || "{}"); } catch { return {}; }
 }
-function isToggleOn(name) { return !!getToggles()[name]; }
+function isToggleOn(name) {
+  // Visual layers default ON when unset — must match applyTogglesFromStorage.
+  const t = getToggles();
+  return t[name] === undefined ? true : !!t[name];
+}
 function setToggle(name, on) {
   const t = getToggles();
   t[name] = !!on;
