@@ -26,6 +26,11 @@ const STATE = {
   // True when the current chapter has no audio fragments — reader falls
   // back to showing the first scene + first key moment statically.
   textOnlyMode: false,
+  // Audio/text sync. `audioFragIdx` is the raw playhead fragment;
+  // `syncOffset` shifts the highlighted sentence to correct a constant
+  // drift in the alignment data (audio leading/lagging the text).
+  audioFragIdx: -1,
+  syncOffset: 0,
   // book + pack identity (parsed from URL)
   bookSlug: null,
   packSlug: null,
@@ -44,6 +49,7 @@ const STATE = {
 
 // Position + theme storage is per-book; visual toggles are global.
 const LS_KEY = `storyplay.position.${STATE.bookSlug}`;
+const LS_SYNC = `storyplay.sync.${STATE.bookSlug}`;
 const LS_THEME = "storyplay.theme";
 const LS_CONTEXT = "storyplay.context";
 const LS_CUSTOM = "storyplay.custom";
@@ -152,6 +158,11 @@ async function loadManifest() {
   }
   if (m.cover) m.cover = resolveBookAsset(m.cover);
   STATE.manifest = m;
+  // Sync offset: per-book localStorage override, else the manifest default.
+  const savedSync = parseInt(localStorage.getItem(LS_SYNC) ?? "", 10);
+  STATE.syncOffset = Number.isFinite(savedSync) ? savedSync : (m.syncOffset || 0);
+  const syncDisp = document.querySelector("#sync-display");
+  if (syncDisp) syncDisp.textContent = STATE.syncOffset > 0 ? `+${STATE.syncOffset}` : `${STATE.syncOffset}`;
   $("#book-title").textContent = m.title;
   $("#book-creator").textContent = m.creator || "";
   document.title = `${m.title} — Storyplay`;
@@ -778,9 +789,15 @@ async function loadSegment(segIdx, intoOffset = 0, { autoplay = false } = {}) {
 }
 
 // ─── highlight ───────────────────────────────────────────────────
-function applyHighlight(idx) {
+function applyHighlight(audioIdx) {
   const fragments = STATE.fragments;
   if (!fragments.length) return;        // text-only mode — no fragments to highlight
+  if (audioIdx === STATE.audioFragIdx) return;
+  STATE.audioFragIdx = audioIdx;
+  // The highlighted sentence is the playhead fragment shifted by the
+  // per-book sync offset (corrects constant audio/text alignment drift).
+  const idx = audioIdx < 0 ? -1
+    : Math.max(0, Math.min(fragments.length - 1, audioIdx + STATE.syncOffset));
   if (idx === STATE.activeFragIdx) return;
 
   // clean previous
@@ -833,10 +850,53 @@ function applyHighlight(idx) {
   if (ctx === "all" && theme !== "cinema") scrollSentenceIntoView(cur);
 }
 
+// ─── audio/text sync offset ──────────────────────────────────────
+// Storyteller's alignment can drift by a constant number of sentences
+// (audio leading or lagging the text). `syncOffset` shifts the highlight
+// to compensate; it persists per book. Adjust live with , and . keys or
+// the Audio sync stepper in settings.
+function setSyncOffset(n) {
+  STATE.syncOffset = Math.max(-25, Math.min(25, Math.round(n)));
+  try { localStorage.setItem(LS_SYNC, String(STATE.syncOffset)); } catch {}
+  const disp = document.querySelector("#sync-display");
+  if (disp) disp.textContent = STATE.syncOffset > 0 ? `+${STATE.syncOffset}` : `${STATE.syncOffset}`;
+  // Re-apply the highlight immediately from the current playhead.
+  const audioIdx = STATE.audioFragIdx >= 0 ? STATE.audioFragIdx : findFragIdx(virtualTime());
+  STATE.audioFragIdx = -2;          // force applyHighlight past its dedup guard
+  applyHighlight(audioIdx);
+  showSyncToast();
+}
+function showSyncToast() {
+  let t = document.getElementById("sync-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "sync-toast";
+    t.style.cssText =
+      "position:fixed;left:50%;bottom:96px;transform:translateX(-50%);" +
+      "background:rgba(18,20,26,0.94);color:#e7e4d8;" +
+      "font:500 13px/1.4 'JetBrains Mono',ui-monospace,monospace;letter-spacing:0.07em;" +
+      "padding:10px 18px;border-radius:8px;border:1px solid rgba(217,181,106,0.32);" +
+      "z-index:9999;opacity:0;transition:opacity 180ms ease;pointer-events:none;" +
+      "box-shadow:0 8px 28px -10px rgba(0,0,0,0.7);";
+    document.body.appendChild(t);
+  }
+  const n = STATE.syncOffset;
+  t.textContent = n === 0
+    ? "Audio sync — aligned"
+    : `Audio sync — text ${n > 0 ? "+" : ""}${n} sentence${Math.abs(n) === 1 ? "" : "s"}`;
+  t.style.opacity = "1";
+  clearTimeout(showSyncToast._t);
+  showSyncToast._t = setTimeout(() => { t.style.opacity = "0"; }, 1500);
+}
+
 function updateSentenceProgress(vt) {
   if (STATE.activeFragIdx < 0) return;
-  const frag = STATE.fragments[STATE.activeFragIdx];
-  const sentence = document.getElementById(frag.id);
+  // The highlighted element comes from activeFragIdx; the timing window
+  // comes from the raw audio fragment so progress tracks the narration
+  // even when a sync offset shifts the highlight.
+  const el = STATE.fragments[STATE.activeFragIdx];
+  const frag = STATE.fragments[STATE.audioFragIdx] || el;
+  const sentence = document.getElementById(el.id);
   if (!sentence) return;
   const span = Math.max(0.01, frag.vEnd - frag.vStart);
   const progress = Math.max(0, Math.min(1, (vt - frag.vStart) / span));
@@ -1168,7 +1228,7 @@ function loop() {
   if (playing) {
     const vt = virtualTime();
     const idx = findFragIdx(vt);
-    if (idx !== STATE.activeFragIdx) applyHighlight(idx);
+    if (idx !== STATE.audioFragIdx) applyHighlight(idx);
     updateSentenceProgress(vt);
     updateContinuousScroll(vt);
     updatePlayerUi();
@@ -1243,6 +1303,10 @@ async function main() {
     cb.addEventListener("change", () => setToggle(cb.dataset.toggle, cb.checked));
   });
   applyTogglesFromStorage();
+
+  // audio/text sync offset stepper
+  $("#sync-minus")?.addEventListener("click", () => setSyncOffset(STATE.syncOffset - 1));
+  $("#sync-plus")?.addEventListener("click", () => setSyncOffset(STATE.syncOffset + 1));
 
   attachDragHandlers();
 
@@ -1353,6 +1417,8 @@ async function main() {
     else if (e.key === "ArrowRight") $("#forward").click();
     else if (e.key === "[") $("#prev-ch").click();
     else if (e.key === "]") $("#next-ch").click();
+    else if (e.key === ",") setSyncOffset(STATE.syncOffset - 1);
+    else if (e.key === ".") setSyncOffset(STATE.syncOffset + 1);
     else if (e.key === "1") setTheme("vinyl");
     else if (e.key === "2") setTheme("cinema");
     else if (e.key === "3") setTheme("karaoke");

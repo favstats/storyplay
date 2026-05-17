@@ -164,6 +164,18 @@ def build(book_slug: str) -> None:
         "totalDuration": sum(c["duration"] for c in chapters),
     }
 
+    # Carry optional book-level settings from book.json into the manifest.
+    # `syncOffset` corrects a constant audio/text alignment drift for the
+    # whole book (the reader still lets the user override it per-device).
+    book_json = book_root / "book.json"
+    if book_json.exists():
+        try:
+            bj = json.loads(book_json.read_text())
+            if isinstance(bj.get("syncOffset"), int):
+                out["syncOffset"] = bj["syncOffset"]
+        except Exception as e:
+            print(f"  (book.json not merged: {e})", file=sys.stderr)
+
     manifest_path = book_root / "manifest.json"
     manifest_path.write_text(json.dumps(out, indent=1))
     audible = sum(1 for c in chapters if c["segments"])
