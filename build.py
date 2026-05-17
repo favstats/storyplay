@@ -181,6 +181,19 @@ def build(book_slug: str) -> None:
             bj = json.loads(book_json.read_text())
             if isinstance(bj.get("syncOffset"), int):
                 out["syncOffset"] = bj["syncOffset"]
+            # Chapter titles: explicit overrides from book.json win; any
+            # audible chapter still left untitled gets a numbered fallback
+            # so the reader never shows a raw spine id.
+            overrides = bj.get("chapterTitles") or {}
+            n = 0
+            for ch in chapters:
+                if not ch.get("segments"):
+                    continue
+                n += 1
+                if ch["id"] in overrides:
+                    ch["title"] = overrides[ch["id"]]
+                elif not (ch.get("title") or "").strip():
+                    ch["title"] = f"Chapter {n}"
         except Exception as e:
             print(f"  (book.json not merged: {e})", file=sys.stderr)
 

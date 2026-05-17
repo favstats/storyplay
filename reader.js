@@ -1257,16 +1257,30 @@ function loop() {
 }
 
 // ─── audio segment advancement ───────────────────────────────────
-function onSegmentEnd() {
-  if (STATE.segIdx < STATE.segments.length - 1) {
+let transitionInFlight = false;
+async function onSegmentEnd() {
+  // Re-entry guard: timeupdate fires several times per second, and the
+  // boundary check keeps matching until the async load actually swaps
+  // the segment/chapter. Without this, one chapter-end fires loadChapter
+  // many times.
+  if (transitionInFlight) return;
+  transitionInFlight = true;
+  try {
     const wasPlaying = !STATE.audio.paused;
-    loadSegment(STATE.segIdx + 1, 0, { autoplay: wasPlaying });
-  } else {
-    // chapter end
-    if (STATE.chapterIdx < STATE.manifest.chapters.length - 1) {
-      const wasPlaying = !STATE.audio.paused;
-      loadChapter(STATE.chapterIdx + 1, { autoplay: wasPlaying });
+    if (STATE.segIdx < STATE.segments.length - 1) {
+      await loadSegment(STATE.segIdx + 1, 0, { autoplay: wasPlaying });
+    } else {
+      // Chapter end — advance to the next chapter that actually has audio
+      // (front/back matter without segments is skipped).
+      let next = STATE.chapterIdx + 1;
+      const chapters = STATE.manifest.chapters;
+      while (next < chapters.length && !(chapters[next].segments || []).length) next++;
+      if (next < chapters.length) {
+        await loadChapter(next, { autoplay: wasPlaying });
+      }
     }
+  } finally {
+    transitionInFlight = false;
   }
 }
 
@@ -1411,10 +1425,13 @@ async function main() {
   STATE.audio.addEventListener("timeupdate", () => {
     if (STATE.audio.paused) updatePlayerUi();
     savePosition();
-    // segment boundary check (in case ended event doesn't fire for trimmed clips)
+    // Segment/chapter boundary check. The audio files are long shared
+    // clips, so the native "ended" event rarely fires at a chapter edge —
+    // this drives the transition. onSegmentEnd handles both "next segment"
+    // and "next chapter" and guards against re-entry.
     const seg = STATE.segments[STATE.segIdx];
     if (seg && STATE.audio.currentTime >= seg.clipStart + seg.duration - 0.05) {
-      if (STATE.segIdx < STATE.segments.length - 1) onSegmentEnd();
+      onSegmentEnd();
     }
   });
   STATE.audio.addEventListener("play", updatePlayerUi);
