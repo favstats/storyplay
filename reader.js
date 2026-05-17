@@ -81,6 +81,15 @@ function rewritePackPaths(data) {
       if (m?.image) m.image = resolvePackAsset(m.image);
     }
   }
+  // Normalize `speakers` to a { fragId: charId } lookup map. Packs may
+  // author it either as that map or as an array of { fragId, id } entries.
+  if (Array.isArray(data.speakers)) {
+    const map = {};
+    for (const s of data.speakers) {
+      if (s && s.fragId) map[s.fragId] = s.id;
+    }
+    data.speakers = map;
+  }
   return data;
 }
 const VISUAL_TOGGLES = ["scenes", "characters", "speakers", "moments"];
@@ -564,10 +573,16 @@ function renderStage() {
   STATE.activeSpeakerId = speakerId;
 
   // characters available in scene
-  const present = (scene.characters || []).map(id => {
+  // A scene's `characters` entry may be a plain id string ("selim") or an
+  // object ({ id, side }). Side comes from the entry if given, else the
+  // character definition, else defaults to "left".
+  const present = (scene.characters || []).map(entry => {
+    const id = typeof entry === "string" ? entry : entry?.id;
+    if (!id) return null;
     const c = STATE.sceneData.characters[id];
     if (!c) return null;
-    return { ...c, _id: id };
+    const side = (typeof entry === "object" && entry.side) || c.side || "left";
+    return { ...c, _id: id, side };
   }).filter(Boolean);
 
   // Group present characters by side (each side can hold multiple — up to ~3)
@@ -709,6 +724,7 @@ async function loadChapter(idx, { virtualTime = 0, autoplay = false } = {}) {
   });
   STATE.fragments = flat;
   STATE.activeFragIdx = -1;
+  STATE.audioFragIdx = -1;       // reset so the chapter's first applyHighlight isn't deduped away
   STATE.segIdx = 0;
   STATE.textOnlyMode = flat.length === 0;
   document.body.dataset.textOnly = STATE.textOnlyMode ? "on" : "off";
