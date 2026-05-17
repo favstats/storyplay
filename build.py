@@ -126,6 +126,14 @@ def build(book_slug: str) -> None:
             try:
                 for seg in parse_smil(smil_path):
                     audio_abs = (smil_path.parent / seg["audio"]).resolve()
+                    # Prefer an accurate-seek sibling if one exists. VBR MP3
+                    # has no seek index — browsers estimate the playhead and
+                    # drift. A re-encoded .m4a/.m4b (AAC) seeks sample-exact.
+                    for ext in (".m4a", ".m4b", ".aac", ".mp4"):
+                        alt = audio_abs.with_suffix(ext)
+                        if alt.exists():
+                            audio_abs = alt
+                            break
                     seg_duration = (
                         seg["fragments"][-1]["end"] - seg["fragments"][0]["start"]
                         if seg["fragments"] else 0
