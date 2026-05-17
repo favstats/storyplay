@@ -1,15 +1,28 @@
 {
   "slug": "sherlock-bohemia",
-  "title": "A Scandal in Bohemia",
+  "title": "The Adventures of Sherlock Holmes",
   "creator": "Arthur Conan Doyle",
-  "series": "The Adventures of Sherlock Holmes #1",
-  "year": 1891,
+  "year": 1892,
   "license": "Public domain (text: Project Gutenberg #1661 / audio: LibriVox)",
   "defaultPack": "sherlock-paget",
-  "description": "The first story in *The Adventures of Sherlock Holmes*. Holmes is hired by the King of Bohemia to recover compromising letters from the only person ever to outwit him — Irene Adler. Short, dialogue-rich, ideal for showcasing the per-speaker visual system.",
-  "tags": ["mystery", "detective", "short-story", "public-domain"],
+  "description": "The twelve classic Sherlock Holmes stories, from 'A Scandal in Bohemia' to 'The Copper Beeches'. Dialogue-rich and tightly plotted — ideal for the per-speaker visual system.",
+  "tags": ["mystery", "detective", "public-domain"],
   "sources": {
     "text":  "https://www.gutenberg.org/ebooks/1661",
     "audio": "https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/"
+  },
+  "chapterTitles": {
+    "item4":  "A Scandal in Bohemia",
+    "item5":  "The Red-Headed League",
+    "item6":  "A Case of Identity",
+    "item7":  "The Boscombe Valley Mystery",
+    "item8":  "The Five Orange Pips",
+    "item9":  "The Man with the Twisted Lip",
+    "item10": "The Adventure of the Blue Carbuncle",
+    "item11": "The Adventure of the Speckled Band",
+    "item12": "The Adventure of the Engineer's Thumb",
+    "item13": "The Adventure of the Noble Bachelor",
+    "item14": "The Adventure of the Beryl Coronet",
+    "item15": "The Adventure of the Copper Beeches"
   }
 }

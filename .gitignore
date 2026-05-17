@@ -11,13 +11,16 @@ books/*/audio/         # LibriVox MP3s fetched on demand — too large for repo
 packs/*-personal/
 packs/*-private/
 
-# Personal pack tied to a copyrighted book — chapter JSONs describe
-# specific scenes from M.R. Carey's *Echo of Worlds* and the AI-generated
-# images are personal-use only.
+# Personal packs tied to copyrighted books — chapter JSONs describe
+# specific scenes and the AI-generated images are personal-use only.
 packs/echo-of-worlds-default/characters/
 packs/echo-of-worlds-default/backgrounds/
 packs/echo-of-worlds-default/moments/
 packs/echo-of-worlds-default/chapter*.json
+packs/butlerian-jihad-default/
+
+# OpenAI key for image generation — local only, never committed.
+.openai_key
 
 # Generation cache
 **/.cache/
@@ -40,3 +43,7 @@ Thumbs.db
 # Built pack archives — produce on demand
 dist/
 *.spk
+
+# install-aligned-epub.py backups
+books/*/content.text-only.bak/
+books/*/gutenberg.epub

@@ -262,14 +262,23 @@ async function loadSceneData(chapterId) {
     const data = rewritePackPaths(await r.json());
     STATE.sceneData = data;
     const idxOf = (fragId) => STATE.fragments.findIndex(f => f.id === fragId);
-    STATE.sceneFragRanges = (data.scenes || []).map(s => ({
-      id: s.id, startIdx: idxOf(s.startFragId), endIdx: idxOf(s.endFragId), scene: s,
-    })).filter(r => r.startIdx >= 0 && r.endIdx >= 0);
+    const lastIdx = Math.max(0, STATE.fragments.length - 1);
+    // Unresolved anchors (e.g. a pack-wide default.json with placeholder
+    // frag ids) clamp to whole-chapter coverage rather than being dropped,
+    // so a default.json still shows its scene + characters in audio mode.
+    STATE.sceneFragRanges = (data.scenes || []).map(s => {
+      let startIdx = idxOf(s.startFragId);
+      let endIdx = idxOf(s.endFragId);
+      if (startIdx < 0) startIdx = 0;
+      if (endIdx < 0) endIdx = lastIdx;
+      return { id: s.id, startIdx, endIdx, scene: s };
+    });
     STATE.momentFragRanges = (data.keyMoments || []).map(m => {
-      const startIdx = idxOf(m.anchorFragId);
-      const endIdx = startIdx >= 0 ? Math.min(STATE.fragments.length - 1, startIdx + (m.durationFrags || 4) - 1) : -1;
+      let startIdx = idxOf(m.anchorFragId);
+      if (startIdx < 0) startIdx = 0;   // unresolved anchor → show near chapter start
+      const endIdx = Math.min(lastIdx, startIdx + (m.durationFrags || 4) - 1);
       return { id: m.id, startIdx, endIdx, moment: m };
-    }).filter(r => r.startIdx >= 0);
+    });
   } catch (e) {
     console.warn("scene data load failed", e);
   }
