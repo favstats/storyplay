@@ -44,25 +44,32 @@ def main():
     with zipfile.ZipFile(epub_path, "r") as z:
         z.extractall(content)
 
-    # If the aligned EPUB has a nested OEBPS layout, flatten it like the
-    # Gutenberg fetcher does.
+    # build.py expects content/package.opf. Handle two cases:
+    #  (a) the OPF sits in a nested subdirectory → flatten it up to content/
+    #  (b) the OPF is already in content/ but named something else
+    #      (e.g. content.opf) → just rename it.
     if not (content / "package.opf").exists():
-        opfs = list(content.rglob("package.opf")) + list(content.rglob("*.opf"))
-        if opfs:
-            opf_dir = opfs[0].parent
+        opfs = list(content.rglob("*.opf"))
+        if not opfs:
+            print("  no .opf file found in the aligned EPUB", file=sys.stderr)
+            sys.exit(1)
+        opf = opfs[0]
+        opf_dir = opf.parent
+        if opf_dir != content:
             print(f"  flattening {opf_dir.relative_to(content)}/* → content/")
-            for child in opf_dir.iterdir():
+            for child in list(opf_dir.iterdir()):
                 target = content / child.name
+                if target == child:
+                    continue
                 if target.exists():
                     if target.is_dir(): shutil.rmtree(target)
                     else: target.unlink()
                 shutil.move(str(child), str(target))
             try: opf_dir.rmdir()
             except OSError: pass
-        if not (content / "package.opf").exists():
-            for cand in content.glob("*.opf"):
-                cand.rename(content / "package.opf")
-                break
+            opf = content / opf.name
+        if not (content / "package.opf").exists() and opf.exists():
+            opf.rename(content / "package.opf")
 
     print(f"▸ rebuilding manifest")
     subprocess.run([sys.executable, "build.py", slug], cwd=ROOT, check=True)
