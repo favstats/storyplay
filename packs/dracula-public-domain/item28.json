@@ -1,0 +1,39 @@
+{
+  "chapterId": "item28",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    },
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item28-main",
+      "title": "The Chase Across Europe",
+      "mood": "Trains, rivers and frozen roads; the hunters racing the sunset toward the Borgo Pass",
+      "background": "backgrounds/carpathian-pass.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        },
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item28-s0",
+      "endFragId": "item28-s378"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

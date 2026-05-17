@@ -1,0 +1,29 @@
+{
+  "chapterId": "item24",
+  "characters": {
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item24-main",
+      "title": "Carfax Abbey",
+      "mood": "A rotting English abbey full of earth-boxes; the Count's lairs sought out one by one",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item24-s0",
+      "endFragId": "item24-s293"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

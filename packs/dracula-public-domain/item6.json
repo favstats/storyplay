@@ -1,0 +1,67 @@
+{
+  "chapterId": "item6",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item6-main",
+      "title": "Jonathan Harker's Journal — The Borgo Pass",
+      "mood": "A lone traveller's coach climbing into the wild Carpathian mountains at dusk, wolves and superstition closing in",
+      "background": "backgrounds/carpathian-pass.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        }
+      ],
+      "startFragId": "item6-s0",
+      "endFragId": "item6-s248"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "nosferatu-title",
+      "title": "Nosferatu — Eine Symphonie des Grauens (1922)",
+      "image": "moments/moment-nosferatu-title.jpg",
+      "anchorFragId": "item6-s2",
+      "durationFrags": 4,
+      "inline": true
+    },
+    {
+      "id": "carpathian-arrival",
+      "title": "The night ride through the Borgo Pass",
+      "image": "moments/moment-carpathian-arrival.jpg",
+      "anchorFragId": "item6-s180",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": [
+    {
+      "fragId": "item6-s54",
+      "id": "harker"
+    },
+    {
+      "fragId": "item6-s80",
+      "id": "harker"
+    },
+    {
+      "fragId": "item6-s94",
+      "id": "harker"
+    },
+    {
+      "fragId": "item6-s181",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item6-s184",
+      "id": "dracula"
+    }
+  ]
+}

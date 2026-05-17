@@ -1,0 +1,121 @@
+{
+  "chapterId": "item7",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    },
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item7-main",
+      "title": "The Castle of Count Dracula",
+      "mood": "A vast, decaying castle of cold stone; a courtly, cadaverous host who casts no warmth",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        },
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item7-s0",
+      "endFragId": "item7-s283"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "orlok-first-look",
+      "title": "“Welcome to my house” — the Count receives his guest",
+      "image": "moments/moment-orlok-first-look.jpg",
+      "anchorFragId": "item7-s31",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": [
+    {
+      "fragId": "item7-s31",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s36",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s42",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s46",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s62",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s90",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s93",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s95",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s107",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s128",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s137",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s140",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s141",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s152",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item7-s40",
+      "id": "harker"
+    },
+    {
+      "fragId": "item7-s135",
+      "id": "harker"
+    },
+    {
+      "fragId": "item7-s139",
+      "id": "harker"
+    },
+    {
+      "fragId": "item7-s151",
+      "id": "harker"
+    }
+  ]
+}

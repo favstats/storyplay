@@ -1,0 +1,17 @@
+{
+  "chapterId": "item14",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item14-main",
+      "title": "Lucy's Sleepwalking",
+      "mood": "The churchyard at night; a pale figure on the seat above the cliff, and two small wounds at a white throat",
+      "background": "backgrounds/cemetery-gate.jpg",
+      "characters": [],
+      "startFragId": "item14-s0",
+      "endFragId": "item14-s367"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

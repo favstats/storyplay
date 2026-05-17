@@ -1,0 +1,88 @@
+{
+  "chapterId": "item9",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    },
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item9-main",
+      "title": "The Three Women and the Escape",
+      "mood": "Moonlit chambers and crumbling walls; the Count's brides, and a desperate climb down the castle face",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        },
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item9-s0",
+      "endFragId": "item9-s335"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": [
+    {
+      "fragId": "item9-s28",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s54",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s62",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s72",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s210",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s220",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s229",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s247",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item9-s219",
+      "id": "harker"
+    },
+    {
+      "fragId": "item9-s221",
+      "id": "harker"
+    },
+    {
+      "fragId": "item9-s225",
+      "id": "harker"
+    },
+    {
+      "fragId": "item9-s226",
+      "id": "harker"
+    }
+  ]
+}

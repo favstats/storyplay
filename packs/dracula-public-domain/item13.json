@@ -1,0 +1,26 @@
+{
+  "chapterId": "item13",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item13-main",
+      "title": "The Whitby Churchyard",
+      "mood": "The cliff-top churchyard above Whitby, leaning tombstones and the ruined abbey, where Lucy walks in her sleep",
+      "background": "backgrounds/cemetery-gate.jpg",
+      "characters": [],
+      "startFragId": "item13-s0",
+      "endFragId": "item13-s375"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "abbey-ruins",
+      "title": "The ruined abbey above the Whitby churchyard",
+      "image": "moments/moment-abbey-ruins.jpg",
+      "anchorFragId": "item13-s54",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": []
+}

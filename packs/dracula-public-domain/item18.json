@@ -1,0 +1,26 @@
+{
+  "chapterId": "item18",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item18-main",
+      "title": "The Death of Lucy",
+      "mood": "Candlelit grief and a dreadful change upon the dead girl's face",
+      "background": "backgrounds/cemetery-dusk.jpg",
+      "characters": [],
+      "startFragId": "item18-s0",
+      "endFragId": "item18-s388"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "cemetery",
+      "title": "Lucy in the cemetery",
+      "image": "moments/moment-cemetery.jpg",
+      "anchorFragId": "item18-s100",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": []
+}

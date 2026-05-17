@@ -1,0 +1,84 @@
+{
+  "chapterId": "item8",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    },
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item8-main",
+      "title": "A Prisoner in the Castle",
+      "mood": "Endless gloomy halls and locked doors; the dawning dread of a guest who is really a captive",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        },
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item8-s0",
+      "endFragId": "item8-s267"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": [
+    {
+      "fragId": "item8-s36",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s42",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s72",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s78",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s88",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s91",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s98",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s115",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s118",
+      "id": "dracula"
+    },
+    {
+      "fragId": "item8-s80",
+      "id": "harker"
+    },
+    {
+      "fragId": "item8-s89",
+      "id": "harker"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "chapterId": "item15",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item15-main",
+      "title": "Seward's Diary — Renfield",
+      "mood": "An English asylum and quiet country letters; a madman counting lives, and Lucy's strength failing",
+      "background": "backgrounds/wanderer.jpg",
+      "characters": [],
+      "startFragId": "item15-s0",
+      "endFragId": "item15-s439"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

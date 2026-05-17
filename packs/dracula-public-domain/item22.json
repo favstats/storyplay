@@ -1,0 +1,17 @@
+{
+  "chapterId": "item22",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item22-main",
+      "title": "The Releasing of Lucy",
+      "mood": "The vampire returned to her tomb; the terrible mercy of stake and prayer",
+      "background": "backgrounds/cemetery-dusk.jpg",
+      "characters": [],
+      "startFragId": "item22-s0",
+      "endFragId": "item22-s353"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

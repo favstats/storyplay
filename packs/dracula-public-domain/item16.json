@@ -1,0 +1,17 @@
+{
+  "chapterId": "item16",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item16-main",
+      "title": "Lucy's Decline",
+      "mood": "Shuttered sickrooms and anxious vigils; blood given and blood lost as Lucy fades",
+      "background": "backgrounds/wanderer.jpg",
+      "characters": [],
+      "startFragId": "item16-s0",
+      "endFragId": "item16-s318"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

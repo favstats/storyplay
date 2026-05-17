@@ -1,0 +1,17 @@
+{
+  "chapterId": "item10",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item10-main",
+      "title": "Letters — Mina and Lucy",
+      "mood": "Genteel English correspondence, sunlit and ordinary, with a far shadow gathering",
+      "background": "backgrounds/wanderer.jpg",
+      "characters": [],
+      "startFragId": "item10-s0",
+      "endFragId": "item10-s227"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

@@ -1,0 +1,17 @@
+{
+  "chapterId": "item20",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item20-main",
+      "title": "The Bloofer Lady",
+      "mood": "Hampstead Heath at dusk; children lured into the dark by a sweet, pale lady",
+      "background": "backgrounds/cemetery-dusk.jpg",
+      "characters": [],
+      "startFragId": "item20-s0",
+      "endFragId": "item20-s372"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

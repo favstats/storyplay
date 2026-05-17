@@ -1,0 +1,148 @@
+{
+  "chapterId": "item4",
+  "characters": {
+    "holmes": {
+      "name": "Sherlock Holmes",
+      "short": "Holmes",
+      "description": "The consulting detective — tall, lean, hawk-nosed, with keen grey eyes, drawn by Sidney Paget for the Strand Magazine.",
+      "portrait": "characters/holmes.jpg"
+    },
+    "watson": {
+      "name": "Dr. John Watson",
+      "short": "Watson",
+      "description": "Holmes's friend, flatmate and chronicler — a sturdy, moustached former army doctor.",
+      "portrait": "characters/watson-greek-interpreter.jpg"
+    },
+    "adler": {
+      "name": "Irene Adler",
+      "short": "Irene Adler",
+      "description": "The American opera contralto and adventuress — to Holmes, always 'the woman'.",
+      "portrait": "characters/irene-adler.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "baker-street",
+      "title": "221B Baker Street",
+      "mood": "Lamplit, book-cluttered Victorian sitting room; the fire crackling, cigar smoke, the hush before a strange client arrives",
+      "background": "backgrounds/baker-street-interior.jpg",
+      "characters": [
+        { "id": "holmes", "side": "left" },
+        { "id": "watson", "side": "right" }
+      ],
+      "startFragId": "item4-s0",
+      "endFragId": "item4-s295"
+    },
+    {
+      "id": "st-monicas",
+      "title": "The Church of St. Monica",
+      "mood": "A near-empty London church in the late afternoon, an unexpected wedding, Holmes in disguise as an idle groom",
+      "background": "backgrounds/st-monicas-church.jpg",
+      "characters": [
+        { "id": "holmes", "side": "left" }
+      ],
+      "startFragId": "item4-s296",
+      "endFragId": "item4-s428"
+    },
+    {
+      "id": "briony-lodge",
+      "title": "Briony Lodge",
+      "mood": "A quiet St John's Wood villa at dusk; the smoke-rocket trick, a cry of fire, and the cleverest opponent Holmes ever faced",
+      "background": "backgrounds/briony-lodge-street.jpg",
+      "characters": [
+        { "id": "holmes", "side": "left" },
+        { "id": "watson", "side": "right" }
+      ],
+      "startFragId": "item4-s429",
+      "endFragId": "item4-s682"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "holmes-by-the-fire",
+      "title": "“Then he stood before the fire” — Sidney Paget, Strand Magazine, 1891",
+      "image": "moments/moment-yawn.jpg",
+      "anchorFragId": "item4-s30",
+      "durationFrags": 5,
+      "inline": true
+    },
+    {
+      "id": "examines-writing",
+      "title": "“I carefully examined the writing” — Sidney Paget",
+      "image": "moments/moment-examines-writing.jpg",
+      "anchorFragId": "item4-s85",
+      "durationFrags": 5,
+      "inline": true
+    },
+    {
+      "id": "king-enters",
+      "title": "“A man entered” — the masked King of Bohemia",
+      "image": "moments/moment-king-enters.jpg",
+      "anchorFragId": "item4-s138",
+      "durationFrags": 6,
+      "inline": true
+    },
+    {
+      "id": "unmasking",
+      "title": "“He tore the mask from his face” — Sidney Paget",
+      "image": "moments/moment-unmasking.jpg",
+      "anchorFragId": "item4-s173",
+      "durationFrags": 5,
+      "inline": true
+    },
+    {
+      "id": "the-disguise",
+      "title": "“A drunken-looking groom” — Holmes in disguise",
+      "image": "moments/moment-disguise.jpg",
+      "anchorFragId": "item4-s296",
+      "durationFrags": 6,
+      "inline": true
+    },
+    {
+      "id": "the-wedding",
+      "title": "At the Church of St. Monica — Sidney Paget",
+      "image": "moments/moment-wedding.jpg",
+      "anchorFragId": "item4-s367",
+      "durationFrags": 6,
+      "inline": true
+    },
+    {
+      "id": "cry-of-fire",
+      "title": "The smoke-rocket — “He gave a cry” — Sidney Paget",
+      "image": "moments/moment-fire-cry.jpg",
+      "anchorFragId": "item4-s511",
+      "durationFrags": 6,
+      "inline": true
+    },
+    {
+      "id": "the-photograph",
+      "title": "“This photograph” — Irene Adler outwits them all",
+      "image": "moments/moment-photograph.jpg",
+      "anchorFragId": "item4-s664",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": [
+    { "fragId": "item4-s31", "id": "holmes" },
+    { "fragId": "item4-s32", "id": "holmes" },
+    { "fragId": "item4-s33", "id": "watson" },
+    { "fragId": "item4-s39", "id": "watson" },
+    { "fragId": "item4-s40", "id": "holmes" },
+    { "fragId": "item4-s41", "id": "holmes" },
+    { "fragId": "item4-s42", "id": "watson" },
+    { "fragId": "item4-s47", "id": "holmes" },
+    { "fragId": "item4-s52", "id": "watson" },
+    { "fragId": "item4-s54", "id": "holmes" },
+    { "fragId": "item4-s55", "id": "holmes" },
+    { "fragId": "item4-s71", "id": "holmes" },
+    { "fragId": "item4-s78", "id": "watson" },
+    { "fragId": "item4-s80", "id": "holmes" },
+    { "fragId": "item4-s86", "id": "watson" },
+    { "fragId": "item4-s89", "id": "holmes" },
+    { "fragId": "item4-s171", "id": "holmes" },
+    { "fragId": "item4-s204", "id": "holmes" },
+    { "fragId": "item4-s226", "id": "holmes" },
+    { "fragId": "item4-s267", "id": "holmes" }
+  ]
+}

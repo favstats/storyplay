@@ -1,0 +1,17 @@
+{
+  "chapterId": "item11",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item11-main",
+      "title": "Mina's Journal — Whitby",
+      "mood": "The wide grey North Sea off the Whitby cliffs, salt wind and the cry of gulls",
+      "background": "backgrounds/monk-by-sea.jpg",
+      "characters": [],
+      "startFragId": "item11-s0",
+      "endFragId": "item11-s328"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

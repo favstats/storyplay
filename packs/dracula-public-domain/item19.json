@@ -1,0 +1,17 @@
+{
+  "chapterId": "item19",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item19-main",
+      "title": "The Funeral",
+      "mood": "A solemn graveside under a grey sky; the closing of a tomb that will not stay closed",
+      "background": "backgrounds/cemetery-gate.jpg",
+      "characters": [],
+      "startFragId": "item19-s0",
+      "endFragId": "item19-s422"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

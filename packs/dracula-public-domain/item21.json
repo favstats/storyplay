@@ -1,0 +1,17 @@
+{
+  "chapterId": "item21",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item21-main",
+      "title": "In the Tomb",
+      "mood": "A vault opened by lantern-light; an empty coffin, and the truth of the Un-Dead",
+      "background": "backgrounds/cemetery-dusk.jpg",
+      "characters": [],
+      "startFragId": "item21-s0",
+      "endFragId": "item21-s251"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

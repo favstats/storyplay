@@ -1,0 +1,26 @@
+{
+  "chapterId": "item12",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item12-main",
+      "title": "The Coming of the Demeter",
+      "mood": "A monstrous storm driving a derelict ship onto the Whitby sands, her dead helmsman lashed to the wheel",
+      "background": "backgrounds/monk-by-sea.jpg",
+      "characters": [],
+      "startFragId": "item12-s0",
+      "endFragId": "item12-s295"
+    }
+  ],
+  "keyMoments": [
+    {
+      "id": "monk-sea",
+      "title": "The storm and the derelict Demeter",
+      "image": "moments/moment-monk-sea.jpg",
+      "anchorFragId": "item12-s31",
+      "durationFrags": 6,
+      "inline": true
+    }
+  ],
+  "speakers": []
+}

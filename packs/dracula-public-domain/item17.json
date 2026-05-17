@@ -1,0 +1,17 @@
+{
+  "chapterId": "item17",
+  "characters": {},
+  "scenes": [
+    {
+      "id": "item17-main",
+      "title": "Van Helsing's Vigil",
+      "mood": "A darkened bedchamber heavy with garlic flowers; an old scholar fighting a thing he dares not yet name",
+      "background": "backgrounds/cemetery-dusk.jpg",
+      "characters": [],
+      "startFragId": "item17-s0",
+      "endFragId": "item17-s436"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

@@ -1,0 +1,39 @@
+{
+  "chapterId": "item32",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    },
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item32-main",
+      "title": "The End of Dracula",
+      "mood": "The Count crumbling to dust at the last ray of day; peace returned, at a price",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        },
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item32-s0",
+      "endFragId": "item32-s427"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

@@ -1,0 +1,29 @@
+{
+  "chapterId": "item23",
+  "characters": {
+    "harker": {
+      "name": "Jonathan Harker",
+      "short": "Harker",
+      "description": "A young English solicitor, earnest and methodical, sent to the Carpathians on the Count's business — and slowly engulfed by horror.",
+      "portrait": "characters/harker-hutter.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item23-main",
+      "title": "The Hunters Gather",
+      "mood": "Harker's journal recovered; a small band of the living bound together against the Count",
+      "background": "backgrounds/wanderer.jpg",
+      "characters": [
+        {
+          "id": "harker",
+          "side": "left"
+        }
+      ],
+      "startFragId": "item23-s0",
+      "endFragId": "item23-s395"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}

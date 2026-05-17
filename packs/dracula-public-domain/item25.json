@@ -1,0 +1,29 @@
+{
+  "chapterId": "item25",
+  "characters": {
+    "dracula": {
+      "name": "Count Dracula",
+      "short": "Dracula",
+      "description": "An ancient Transylvanian nobleman — tall, gaunt, pale and predatory; the vampire of the Carpathians.",
+      "portrait": "characters/dracula.jpg"
+    }
+  },
+  "scenes": [
+    {
+      "id": "item25-main",
+      "title": "The Attack on Mina",
+      "mood": "A night-time bedchamber violated; the Count's mark set upon Mina Harker",
+      "background": "backgrounds/castle-ruins.jpg",
+      "characters": [
+        {
+          "id": "dracula",
+          "side": "right"
+        }
+      ],
+      "startFragId": "item25-s0",
+      "endFragId": "item25-s376"
+    }
+  ],
+  "keyMoments": [],
+  "speakers": []
+}
